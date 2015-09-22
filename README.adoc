@@ -1,0 +1,10 @@
+= cmdpack
+
+These are a set of utilities originally released by Neill Corlett
+(http://www.neillcorlett.com/cmdpack/), but the upstream has since
+vanished from the web.
+
+There is some minor restructuring here, and in particular, ecm is
+renamed to avoid a conflict with another program. The last (v1.03)
+release is fully preserved as the root commit of this repository, and
+also tagged.
