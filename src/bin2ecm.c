@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-#define TITLE "ecm - Encoder/decoder for Error Code Modeler format"
+#define TITLE "bin2ecm - Encoder/decoder for Error Code Modeler format"
 #define COPYR "Copyright (C) 2002-2011 Neill Corlett"
 //
 // This program is free software: you can redistribute it and/or modify
@@ -1038,10 +1038,10 @@ int main(int argc, char** argv) {
     switch(argc) {
     case 2:
         //
-        // ecm   source
-        // unecm source
+        // bin2ecm source
+        // ecm2bin source
         //
-        encode = (strcmp(argv[0], "unecm") != 0);
+        encode = (strcmp(argv[0], "ecm2bin") != 0);
         infilename  = argv[1];
 
         tempfilename = malloc(strlen(infilename) + 7);
@@ -1082,10 +1082,10 @@ int main(int argc, char** argv) {
 
     case 3:
         //
-        // ecm   source dest
-        // unecm source dest
+        // bin2ecm source dest
+        // ecm2bin source dest
         //
-        encode = (strcmp(argv[0], "unecm") != 0);
+        encode = (strcmp(argv[0], "ecm2bin") != 0);
         infilename  = argv[1];
         outfilename = argv[2];
         break;
@@ -1136,14 +1136,14 @@ usage:
         "Usage:\n"
         "\n"
         "To encode:\n"
-        "    ecm cdimagefile\n"
-        "    ecm cdimagefile ecmfile\n"
-        "    ecm e cdimagefile ecmfile\n"
+        "    bin2ecm cdimagefile\n"
+        "    bin2ecm cdimagefile ecmfile\n"
+        "    bin2ecm e cdimagefile ecmfile\n"
         "\n"
         "To decode:\n"
-        "    unecm ecmfile\n"
-        "    unecm ecmfile cdimagefile\n"
-        "    ecm d ecmfile cdimagefile\n"
+        "    ecm2bin ecmfile\n"
+        "    ecm2bin ecmfile cdimagefile\n"
+        "    bin2ecm d ecmfile cdimagefile\n"
     );
 
 error:
