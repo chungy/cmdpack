@@ -1,4 +1,4 @@
-VERSION = v$(shell git describe --dirty 2>/dev/null || echo 1.04)
+VERSION = v$(shell git describe --dirty 2>/dev/null || echo 1.05)
 CPPFLAGS += -DVERSION=\"$(VERSION)\"
 
 PROGS = bin2ecm bin2iso bincomp brrrip byteshuf byteswap cdpatch	\

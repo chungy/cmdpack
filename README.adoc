@@ -4,7 +4,8 @@ These are a set of utilities originally released by Neill Corlett
 (http://www.neillcorlett.com/cmdpack/), but the upstream has since
 vanished from the web.
 
-There is some minor restructuring here, and in particular, ecm is
-renamed to avoid a conflict with another program. The last (v1.03)
-release is fully preserved as the root commit of this repository, and
-also tagged.
+I don't plan on any major developments, but I'll try to clean up the
+utilities at least a little bit.  So far, the most major change is
+ecm's name change to bin2ecm, and requires being called with a name of
+ecm2bin to do the reverse operation now.  Neill's last version, 1.03,
+is completely preserved as the root commit and is tagged.
