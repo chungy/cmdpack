@@ -1090,22 +1090,6 @@ int main(int argc, char** argv) {
         outfilename = argv[2];
         break;
 
-    case 4:
-        //
-        // ecm e source dest
-        // ecm d source dest
-        //
-        if(!strcmp(argv[1], "e")) {
-            encode = 1;
-        } else if(!strcmp(argv[1], "d")) {
-            encode = 0;
-        } else {
-            goto usage;
-        }
-        infilename  = argv[2];
-        outfilename = argv[3];
-        break;
-
     default:
         goto usage;
     }
@@ -1138,12 +1122,10 @@ usage:
         "To encode:\n"
         "    bin2ecm cdimagefile\n"
         "    bin2ecm cdimagefile ecmfile\n"
-        "    bin2ecm e cdimagefile ecmfile\n"
         "\n"
         "To decode:\n"
         "    ecm2bin ecmfile\n"
         "    ecm2bin ecmfile cdimagefile\n"
-        "    bin2ecm d ecmfile cdimagefile\n"
     );
 
 error:
