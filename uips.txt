@@ -1,0 +1,24 @@
+uips(1)
+=======
+:doctype: manpage
+
+NAME
+----
+uips - Universal IPS patch create/apply utility
+
+SYNOPSIS
+--------
+*uips* 'c' 'patch_file' 'source_file'... 'target_file'
+
+*uips* 'a' 'patch_file' 'target_file'
+
+DESCRIPTION
+-----------
+uips is a utility for creating and applying IPS patches.  IPS is an
+old patch format for binary files, limited to 16MiB in size, and not
+to be confused with the newer UPS format.  Multiple source files and
+IPSv2 truncation are supported.
+
+A command invocation like ``uips c patch.ips file1 file2 file3 file4''
+will create a patch file capable of transforming any of the files
+'file1', 'file2', or 'file3' to 'file4'.

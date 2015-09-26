@@ -1,0 +1,72 @@
+bin2ecm(1)
+==========
+:doctype: manpage
+
+NAME
+----
+bin2ecm - encoder and decoder for the error code modeler format
+
+SYNOPSIS
+--------
+*bin2ecm* 'cdimagefile' ['ecmfile']
+
+*ecm2bin* 'ecmfile' ['cdimagefile']
+
+DESCRIPTION
+-----------
+ECM is a compression format for raw CD images (those with 2352-byte
+sectors) which removes ECC/EDC data where it is possible to do so
+losslessly.  Compressing a CD image with bin2ecm first then
+compressing the ECM file with a general-purpose compressor such as
+gzip(1) or xz(1) can result in better compression than gzip or xz
+alone.
+
+This works because raw CD-ROM images contain a lot of redundant data
+that, if constructed fully to the standard specification, can be
+regenerated without data loss.  Some discs contain invalid ECC data
+normally, usually as copy protection means.  ECM will preserve this
+invalid data as-is.
+
+ecm2bin reverses the process and recreates the original CD-ROM image
+from an ECM file.
+
+bin2ecm followed by ecm2bin should be lossless for any kind of file,
+but it is only intended for and works properly with a 2352-byte CD
+images.
+
+TECHNICAL BACKGROUND
+--------------------
+
+Raw CD-ROM sectors, 2352 bytes each, contain five main segments in
+them:
+
+1. *Sync* - a special code used by the drive firmware to tell where
+the sector begins.
+2. *Address* - informs the drive firmware of which sector on the disc
+this is.
+3. *Data* - the 2048-byte block of data returned to software on normal
+reads. This is usually a file system (such as ISO-9660 or UDF) block.
+4. *EDC* - Error Detection Code, a checksum to detect if the data is
+corrupt.
+5. *ECC* - Error Correction Code, parity data used in an attempt to
+repair a damaged data sector.
+
+The EDC and ECC segments sector are effectively random noise to a
+general-purpose compressor and will make it difficult to gain much in
+the compression process.
+
+When the sync, EDC, and ECC data are verifiably reproducable by
+standard means, bin2ecm will remove them and leave only the address
+and data portions, potentially providing better compression results on
+that sector.  If these segments deviate from the standard, which is
+usually a result of the disc having copy protection employed on it,
+ECM preserves it as-is.  Copy protection schemes usually leave only a
+few sectors with invalid data, such as at the very beginning or end of
+the disc, so that the bulk of the disc can properly take advantage of
+the CD-ROM format's capability for self-repair on read.  Copy
+protection and preserving this invalid data is also one reason why
+backing up the entire 2352-byte sector, instead of the 2048-byte data
+segments, can be useful.
+
+ecm2bin reverses the process, recalculating the sync, EDC, and ECC
+segments for all the sectors that bin2ecm had trimmed.

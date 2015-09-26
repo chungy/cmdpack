@@ -1,0 +1,23 @@
+byteswap(1)
+===========
+:doctype: manpage
+
+NAME
+----
+byteswap - swap byte order of files
+
+SYNOPSIS
+--------
+*byteswap* ['-q'] ['-s recordsize'] 'file'...
+
+DESCRIPTION
+-----------
+Swaps the byte order of each record in a file, in place.  If the
+record size is 2, this means every even and odd byte is swapped, but
+the record size can also be larger than 2.  Useful for dealing with
+certain types of ROM images.
+
+OPTIONS
+-------
+*-q*:: quietten output
+*-s*:: Size, in bytes, of each record to swap (default=2)

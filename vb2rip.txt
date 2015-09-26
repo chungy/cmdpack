@@ -1,0 +1,39 @@
+vb2rip(1)
+=========
+:doctype: manpage
+
+NAME
+----
+vb2rip - VB2 sound format ripping utility
+
+SYNOPSIS
+--------
+*vb2rip* ['options'] 'FILE'...
+
+DESCRIPTION
+-----------
+Rips music in .VB2 and similar formats found in PlayStation and
+PlayStation 2 games.
+
+Supported input formats:
+
+raw:: raw data (for experimentation)
+vb2:: Konami multi-song .BIN/.VB2 file (DDR, etc)
+8:: 8 file (Suikoden)
+msa:: MSA file (Psyvariar, possibly other PS2 games)
+xa2:: XA2 file (Extreme-G 3, possibly other PS3 games)
+
+OPTIONS
+-------
+*-fmt FORMAT*:: Specify the input file format
+*-o PATH*:: Specify the output file name, or specify the output
+  directory
+*-mono*:: Treat input file as monoaural
+*-stereo*:: Treat input file as stereo
+*-rate N*:: Specify the sample rate
+*-interleave N*:: Specify the block interleave size
+*-skip N*:: Skip this many bytes after each block
+*-offset N*:: Start at the given offset in the input file
+*-endflag*:: Stop decoding when the sample end flag is reached
+*-noendflag*:: Ignore the sample end flag
+*-maxbytes N*:: Set the maximum number of input bytes to decode

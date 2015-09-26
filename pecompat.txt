@@ -1,0 +1,22 @@
+pecompat(1)
+===========
+:doctype: manpage
+
+NAME
+----
+pecompat - Maximize compatibility of a Windows PE file
+
+SYNOPSIS
+--------
+*pecompat* 'exe_file'
+
+DESCRIPTION
+-----------
+Patches a Windows 32-bit PE executable file to maximize its
+compatibility with older versions of Windows.
+
+Specifically, it:
+* Clears the linker time stamp
+* Sets the required OS version and subsystem to ``4.00'' (Windows 95)
+* Recalculates the PE checksum
+* Warns if any Unicode import functions are used

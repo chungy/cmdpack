@@ -1,0 +1,24 @@
+byteshuf(1)
+===========
+:doctype: manpage
+
+NAME
+----
+byteshuf - Shuffle or unshuffle bytes in a file
+
+SYNOPSIS
+--------
+*byteshuf* ['-o'] '-u' 'source' ['subfiles'...]
+
+*byteshuf* ['-o'] '-s' 'destination' ['subfiles'...]
+
+DESCRIPTION
+-----------
+Divides a file into its interleaved even/odd bytes, or recombines
+them.  Can also divide every third, fourth, etc byte, depending on how
+many subfiles you specify.  Useful for dealing with certain types of
+ROM images.
+
+OPTION
+------
+*-o*:: Force overwrite of files

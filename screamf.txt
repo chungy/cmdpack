@@ -1,0 +1,20 @@
+screamf(1)
+==========
+:doctype: manpage
+
+NAME
+----
+screamf - .AMF to .S3M converter
+
+SYNOPSIS
+--------
+*screamf* 'amf_file' 's3m_file'
+
+DESCRIPTION
+-----------
+Converts AMF music files to S3M.  AMF was a format used exclusively by
+Otto Chrons' DOS Sound and Music Interface (DSMI) library and Dual
+Module Player.  Various DOS games and demos in the 1990s used this
+format.  AMF files were the result of running MOD2AMF on an existing
+S3M or other module; screamf does the opposite.  It's round-trippable
+for the most part.

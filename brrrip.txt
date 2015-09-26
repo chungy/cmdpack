@@ -1,0 +1,20 @@
+brrrip(1)
+=========
+:doctype: manpage
+
+NAME
+----
+brrrip - rip SNES BRR sound samples
+
+SYNOPSIS
+--------
+*brrrip* 'rom' ['samplerate' ['minblocks']]
+
+DESCRIPTION
+-----------
+Automatically detects and rips sound samples from Super Nintendo
+Entertainment System ROM images.
+
+'samplerate' should be given in Hz.  Samples will only be detected if
+they are at least 'minblocks' long (default=50).  The output files
+will be named 'hex_address'.wav.

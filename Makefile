@@ -6,23 +6,32 @@ PROGS = bin2ecm bin2iso bincomp brrrip byteshuf byteswap cdpatch	\
         usfv vb2rip wordadd zerofill
 
 .PHONY: all clean install
+.SUFFIXES: .txt .1
 
 all: $(PROGS)
 
 clean:
-	rm -f $(PROGS)
+	rm -f $(PROGS) *.1
+
+.txt.1:
+	a2x -f manpage $*.txt
 
 prefix?=/usr/local
 bindir?=/bin
+mandir?=/share/man
 target=$(DESTDIR)$(prefix)
 
-install-%: %
+install-%: % %.1
 	install -d "$(target)$(bindir)"
+	install -d "$(target)$(mandir)/man1"
 	install $< "$(target)$(bindir)"
+	install -m644 $<.1 "$(target)$(mandir)/man1"
 
-install-bin2ecm: bin2ecm
+install-bin2ecm: bin2ecm bin2ecm.1
 	install -d "$(target)$(bindir)"
+	install -d "$(target)$(mandir)/man1"
 	install bin2ecm "$(target)$(bindir)"
+	install -m644 bin2ecm.1 "$(target)$(mandir)/man1"
 	ln -s bin2ecm "$(target)$(bindir)/ecm2bin"
 
 install: install-bin2ecm install-bin2iso install-bincomp		\

@@ -1,0 +1,22 @@
+rels(1)
+=======
+:doctype: manpage
+
+NAME
+----
+rels - Relative searcher
+
+SYNOPSIS
+--------
+*rels* 'string' 'FILE'...
+
+DESCRIPTION
+-----------
+Searches for a string in a group of files by comparing the relative
+difference between each letter.  This allows finding strings in
+non-ASCII character sets.  Also attempts double values (e.g. 00=A, 02=B,
+04=C) and wide values (every other byte, as in UCS-2).  A staple ROM
+hacking tool.
+
+Search strings may include ``.'' characters as wildcards, but must
+include at least two non-wildcard characters.

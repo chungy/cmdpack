@@ -1,0 +1,51 @@
+cdpatch(1)
+==========
+:doctype: manpage
+
+NAME
+----
+cdpatch - CD-XA image insert/extract utility
+
+SYNOPSIS
+--------
+*cdpatch* '-i' 'imagefile' ['-be'|'-boot'|'-d' 'dir'|'-f'|'-le'|'-o'|'-r'|'-v']
+
+DESCRIPTION
+-----------
+Inserts or extracts files in-place into CD-ROM images in either .BIN
+or .ISO format.  Properly handles CD-XA streams from Mode 2 CDs (video
+CDs, PlayStation CDs, etc) and patches EDC/ECC data as appropriate.
+
+By default, cdpatch will attempt to insert or extract every file in
+the CD image, the same as if you'd specified '-r .'.  The '-boot'
+option will insert or extract the 32KiB boot sector to a file named
+'boot'.
+
+Some CD images may have conflicting sets big- and little-endian
+metadata as a platform-specific quirk or copy protection scheme; the
+'-be' and '-le' options can be used to override this.
+
+Specifying both '-f' and '-v' will list all file system errors, while
+still ignoring them for extraction purposes.
+
+When extracting files with '-x', cdpatch preserves file modification
+times when possible.
+
+OPTIONS
+-------
+*-be*:: Favor big-endian values in ISO-9660 metadata.
+
+*-le*:: Favor little-endian values in ISO-9660 metadata.
+
+*-boot*:: Insert or extract the boot area
+
+*-d dir*:: Set the base directory for inserted or extracted files
+  (defaults to .)
+
+*-f*:: Skip file system consistency checks
+
+*-o*:: Force overwrite when extracting files
+
+*-r*:: Recurse into subdirectories
+
+*-v*:: Verbose

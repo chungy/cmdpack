@@ -1,0 +1,36 @@
+hax65816(1)
+===========
+:doctype: manpage
+
+NAME
+----
+hax65816 - Simple 65816 disassembler
+
+SYNOPSIS
+--------
+*hax65816* 'imagefile' 'start' 'address' ['length']
+ ['-m{0,1}'|'-x{0,1}'|'-noreturn'|'-noguess'|'-nofollow']
+
+DESCRIPTION
+-----------
+A simple 65816 disassembler with basic flag following.  This is the
+disassembler used for the Seiken Densetsu 3 project, among others.
+
+Output is written on stdout, all values must be given in hexadecimal.
+If no length is given, disassembly will stop at the end of the bank.
+
+OPTIONS
+-------
+*-m0*:: Assume M flag = 0
+
+*-m1*:: Assume M flag = 1 (default)
+
+*-x0*:: Assume X flag = 0 (default)
+
+*-x1*:: Assume X flag = 1
+
+*-noreturn*:: Disable flag reset after RTS/RTL/RTI
+
+*-noguess*:: Disable flag guess on BRK/COP/WDM/STP
+
+*-nofollow*:: Disable REP/SEP following (not recommendeD)

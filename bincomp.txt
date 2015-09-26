@@ -1,0 +1,21 @@
+bincomp(1)
+==========
+:doctype: manpage
+
+NAME
+----
+bincomp - compare binary files
+
+SYNOPSIS
+--------
+*bincomp* 'file1' 'file2' ['-l']
+
+DESCRIPTION
+-----------
+Compares two binary files in a side-by-side table showing 16 bytes per
+line.  The '-l' flag will show one byte per line instead.  This
+command is similar to the DOS `FC /B` command.
+
+OPTION
+------
+*-l*:: Use long format

@@ -1,0 +1,17 @@
+fakecrc(1)
+==========
+:doctype: manpage
+
+NAME
+----
+fakecrc - fake the CRC32 of a file
+
+SYNOPSIS
+--------
+*fakecrc* 'file' ['desired_crc32' ['offset']]
+
+DESCRIPTION
+-----------
+Modifies the file to force it to have a particular CRC32 checksum, by
+patching four consecutive bytes anywhere in the file.  Can also obtain
+the current CRC32 checksum of a file.

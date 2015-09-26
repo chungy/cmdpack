@@ -1,0 +1,19 @@
+wordadd(1)
+==========
+:doctype: manpage
+
+NAME
+----
+wordadd - Addition word puzzle solver
+
+SYNOPSIS
+--------
+*wordadd* 'words'... 'sum'
+
+DESCRIPTION
+-----------
+Finds solutions to letter/digit substitution of the ``WORD + WORD =
+OTHER'' variety.  Supports multiple adends and digits mixed in with
+letters.
+
+Example: wordadd BEEF BACON MEATS
