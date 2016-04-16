@@ -31,8 +31,8 @@ ecm2bin reverses the process and recreates the original CD-ROM image
 from an ECM file.
 
 bin2ecm followed by ecm2bin should be lossless for any kind of file,
-but it is only intended for and works properly with a 2352-byte CD
-images.
+but it is only intended for and works properly with 2352-byte sector
+CD images.
 
 TECHNICAL BACKGROUND
 --------------------
