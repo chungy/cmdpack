@@ -9,3 +9,18 @@ utilities at least a little bit.  So far, the most major change is
 ecm's name change to bin2ecm, and requires being called with a name of
 ecm2bin to do the reverse operation now.  Neill's last version, 1.03,
 is completely preserved as the root commit and is tagged.
+
+== Obsoleted utilities
+
+Past versions of cmdpack included some utilities that have been
+deleted, deemed redundant by, and worse than, alternative programs.
+
+ * +bin2iso+: Bob Doiron's +bin2iso+ or full CD image mounting
+   programs like +cdemu+ can do the job better.
+ * +byteswap+: +dd+.
+ * +id3point+: Any number of replacements, from the command line +id3+
+   program to full internet database-based bulk taggers like
+   Picard.  Take your pick.
+ * +subfile+: +dd+.
+ * +usfv+: +rhash+.
+ * +zerofill+: +truncate+ or +dd+.

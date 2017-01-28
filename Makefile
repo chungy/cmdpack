@@ -1,9 +1,8 @@
 VERSION = v$(shell git describe --dirty 2>/dev/null || echo 1.05)
 CPPFLAGS += -DVERSION=\"$(VERSION)\"
 
-PROGS = bin2ecm bin2iso bincomp brrrip byteshuf byteswap cdpatch	\
-        fakecrc hax65816 id3point pecompat rels screamf subfile uips	\
-        usfv vb2rip wordadd zerofill
+PROGS = bin2ecm bincomp brrrip byteshuf cdpatch fakecrc hax65816	\
+        pecompat rels screamf uips vb2rip wordadd
 
 .PHONY: all clean install
 .SUFFIXES: .txt .1
@@ -34,9 +33,7 @@ install-bin2ecm: bin2ecm bin2ecm.1
 	install -m644 bin2ecm.1 "$(target)$(mandir)/man1"
 	ln -s bin2ecm "$(target)$(bindir)/ecm2bin"
 
-install: install-bin2ecm install-bin2iso install-bincomp		\
-         install-brrrip install-byteshuf install-byteswap		\
-         install-cdpatch install-fakecrc install-hax65816		\
-         install-id3point install-pecompat install-rels			\
-         install-screamf install-subfile install-uips install-usfv	\
-         install-vb2rip install-wordadd install-zerofill
+install: install-bin2ecm install-bincomp install-brrrip			\
+         install-byteshuf install-cdpatch install-fakecrc		\
+         install-hax65816 install-pecompat install-rels			\
+         install-screamf install-uips install-vb2rip install-wordadd
