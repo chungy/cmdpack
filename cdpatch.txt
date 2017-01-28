@@ -8,7 +8,11 @@ cdpatch - CD-XA image insert/extract utility
 
 SYNOPSIS
 --------
+'Insertion':::
 *cdpatch* '-i' 'imagefile' ['-be'|'-boot'|'-d' 'dir'|'-f'|'-le'|'-o'|'-r'|'-v']
+
+'Extraction':::
+*cdpatch* '-x' 'imagefile' ['-be'|'-boot'|'-d' 'dir'|'-f'|'-le'|'-o'|'-r'|'-v']
 
 DESCRIPTION
 -----------
