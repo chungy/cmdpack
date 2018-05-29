@@ -27,7 +27,8 @@ install-%: % %.1
 install-bin2ecm: bin2ecm bin2ecm.1
 	install -D bin2ecm -t "$(target)$(bindir)"
 	install -Dm644 bin2ecm.1 -t "$(target)$(mandir)/man1"
-	ln -s bin2ecm "$(target)$(bindir)/ecm2bin"
+	ln -fs bin2ecm "$(target)$(bindir)/ecm2bin"
+	ln -fs bin2ecm.1 "$(target)$(mandir)/man1/ecm2bin.1"
 
 install: install-bin2ecm install-bincomp install-brrrip			\
          install-byteshuf install-cdpatch install-fakecrc		\
