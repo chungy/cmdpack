@@ -21,16 +21,12 @@ mandir?=/share/man
 target=$(DESTDIR)$(prefix)
 
 install-%: % %.1
-	install -d "$(target)$(bindir)"
-	install -d "$(target)$(mandir)/man1"
-	install $< "$(target)$(bindir)"
-	install -m644 $<.1 "$(target)$(mandir)/man1"
+	install -D $< -t "$(target)$(bindir)"
+	install -Dm644 $<.1 -t "$(target)$(mandir)/man1"
 
 install-bin2ecm: bin2ecm bin2ecm.1
-	install -d "$(target)$(bindir)"
-	install -d "$(target)$(mandir)/man1"
-	install bin2ecm "$(target)$(bindir)"
-	install -m644 bin2ecm.1 "$(target)$(mandir)/man1"
+	install -D bin2ecm -t "$(target)$(bindir)"
+	install -Dm644 bin2ecm.1 -t "$(target)$(mandir)/man1"
 	ln -s bin2ecm "$(target)$(bindir)/ecm2bin"
 
 install: install-bin2ecm install-bincomp install-brrrip			\
